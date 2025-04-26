@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Join our wellness programs for obesity, diabetes, joint pain, and more. Live healthier today!">
+  <meta name="keywords" content="Wellness, Yoga, Obesity, Diabetes, Joint Pain, Health, Online Health Programs">
+  <meta name="author" content="Your Wellness Brand">Royal Ayurvedic Care
+  <title>Wellness Programs | Join for a Healthier You</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google AdSense placeholder -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <h1>Welcome to Your Wellness Hub</h1>
+    <p>Find the perfect program for your health goals</p>
+  </header>
+
+  <main class="container">
+    <section class="selector">
+      <label for="wellness-select">Choose a Wellness Focus:</label>
+      <select id="wellness-select" onchange="showProgram()">
+        <option value="">-- Select an Option --</option>
+        <option value="obesity">Obesity Management</option>
+        <option value="diabetes">Diabetes Care</option>
+        <option value="thyroid">Thyroid Balance</option>
+        <option value="joint">Joint Pain Relief</option>
+        <option value="heart">Heart Health</option>
+        <option value="hormone">Hormone Wellness</option>
+        <option value="piles">Piles Care</option>
+        <option value="child">Child Health Programs</option>
+      </select>
+    </section>
+
+    <section id="program-details" class="program-details">
+      <p>Please select a program to see the details.</p>
+    </section>
+
+    <!-- AdSense ad space -->
+    <section class="ad-space">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="YYYYYYYYYY"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Your Wellness Brand | All rights reserved</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
+}
+
+.header, .footer {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.selector {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.program-details {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  min-height: 150px;
+}
+
+.ad-space {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.footer {
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+}
+function showProgram() {
+  const selection = document.getElementById('wellness-select').value;
+  const details = document.getElementById('program-details');
+
+  const programs = {
+    obesity: "Join our Obesity Management program featuring customized diet, yoga, and fitness plans to help you achieve sustainable weight loss.",
+    diabetes: "Control and reverse Type 2 Diabetes naturally with our expert-guided diet, fitness, and lifestyle sessions.",
+    thyroid: "Our Thyroid Balance program supports hormonal health with yoga therapies, mindfulness, and special diets.",
+    joint: "Say goodbye to joint pain with our movement therapy, physiotherapy yoga, and anti-inflammatory diet plans.",
+    heart: "Keep your heart strong and healthy with cardio yoga, nutrition support, and stress-reduction programs.",
+    hormone: "Balance your hormones with our integrated wellness approach, combining yoga, Ayurveda, and nutrition science.",
+    piles: "Heal naturally from piles with our dietary guidance, yoga postures, and personalized care programs.",
+    child: "Boost your child's health with safe yoga practices, nutrition tips, and immunity-boosting activities."
+  };
+
+  if (selection && programs[selection]) {
+    details.innerHTML = `<h2>${document.querySelector('#wellness-select option:checked').textContent}</h2><p>${programs[selection]}</p>`;
+  } else {
+    details.innerHTML = `<p>Please select a program to see the details.</p>`;
+  }
+}
